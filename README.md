@@ -23,3 +23,4 @@ npm run build
 - Hot reload server
 - Favicon generator
 - SVG inline loader
+- Images loader
