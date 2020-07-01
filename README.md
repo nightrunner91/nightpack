@@ -6,8 +6,14 @@
 
 ## How to use it?
 
-Just clone the project and run:
->npm i && npm run watch
+```
+git clone git@github.com:nightrunner91/nightpack.git
+npm i
+```
+```
+npm run watch
+npm run build
+```
 
 ## Features included:
 
