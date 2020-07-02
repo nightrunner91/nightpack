@@ -36,6 +36,10 @@ npm run build
 - [SASS Structure](#sass-structure)
 - [Grid system](#grid-system)
 - [Javascript structure](#javascript-structure)
+- [Images loader](#images-loader)
+- [SVG Inline loader](#svg-inline-loader)
+- [SVG Sprite](#svg-sprite)
+- [Favicon generator](#favicon-generator)
 
 ### `PUG Templates`
 
