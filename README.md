@@ -326,3 +326,5 @@ new FaviconsWebpackPlugin({
   prefix: 'favicons/'
 })
 ```
+### Building project
+
