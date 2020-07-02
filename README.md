@@ -247,7 +247,16 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 rules: [
   {
     test: /\.svg$/,
-    loader: 'svg-sprite-loader'
+    use: [
+      { loader: 'svg-sprite-loader', options: {} },
+      { loader: 'svgo-loader', options: {
+        plugins: [
+          {removeTitle: true},
+          {convertColors: {shorthex: false}},
+          {convertPathData: false}
+        ]
+      }}
+    ]
   }
 ],
 
@@ -265,7 +274,9 @@ And then insert it to PUG file like this:
 ```
 svg: use(xlink:href='#icon')
 ```
-Of course you can configure loader as you want, but I found this method most usefull and simple.
+Of course you can configure loader as you want, but I found this method most usefull and simple. 
+
+And as you can mention, it also uses [SVGO Loader](https://github.com/rpominov/svgo-loader) to optimize SVG icons. You can read more about this in [SVGO documentation](https://github.com/svg/svgo#what-it-can-do). 
 
 ### `Favicon generator`
 
