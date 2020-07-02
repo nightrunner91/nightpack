@@ -8,5 +8,3 @@ import "./scripts/app.js";
 
 
 // Import svg icons
-import "./assets/smile.svg"
-import "./assets/raw.svg"

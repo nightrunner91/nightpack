@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+//const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
 
@@ -84,18 +84,10 @@ module.exports = {
         ],
       },
 
-      // {
-      //   test: /\.svg/,
-      //   use: {
-      //     loader: 'svg-url-loader',
-      //     options: {}
-      //   }
-      // },
-
       {
-        test: /\.svg$/,
+        test: /\.svg/,
         use: [
-          { loader: 'svg-sprite-loader', options: {} },
+          { loader: 'svg-url-loader', options: {} },
           { loader: 'svgo-loader', options: {
             plugins: [
               {removeTitle: true},
@@ -104,7 +96,21 @@ module.exports = {
             ]
           }}
         ]
-      }
+      },
+
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     { loader: 'svg-sprite-loader', options: {} },
+      //     { loader: 'svgo-loader', options: {
+      //       plugins: [
+      //         {removeTitle: true},
+      //         {convertColors: {shorthex: false}},
+      //         {convertPathData: false}
+      //       ]
+      //     }}
+      //   ]
+      // }
 
     ]
   },
@@ -124,10 +130,10 @@ module.exports = {
     }),
 
     // Jquery (if needed)
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery'
+    // }),
     
     // Favicons generator
     new FaviconsWebpackPlugin({
@@ -135,7 +141,7 @@ module.exports = {
       prefix: 'favicons/'
     }),
 
-    new SpriteLoaderPlugin()
+    //new SpriteLoaderPlugin()
 
   ]
 };
