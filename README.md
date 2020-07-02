@@ -68,7 +68,7 @@ html(lang='en')
 
     +footer
 ```
-File [_mixins.pug](src/views/_mixins.pug) includes all types of blocks which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders.
+File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders.
 ```
 //- Core
 include core/_meta
@@ -101,6 +101,7 @@ styles
   ├── blocks
       ├── _header.sass
       ├── _footer.sass
+      ├── etc...
   ├── core
       ├── _colors.sass
       ├── _extends.sass
@@ -129,10 +130,13 @@ Output css files will include all needed prefixes thanks to PostCSS loder. You c
 
 ### `Grid system`
 
-It uses custom 12 column grid system based on flex. You can use it both in PUG or SASS. I personally prefer SASS method because output HTML looks pretty and clean.
+It uses custom 12 column grid system based on flex. Actually, you can modify number of columns. For example, 24 or 36 depends on project you work on. You can use grid system both in PUG or SASS. I personally prefer SASS method because in that case output HTML looks pretty and clean.
+
+**PUG**:
 ```
 div.col.lg-6.md-6.sm-6.xs-6.mb-12
 ```
+**SASS**:
 ```
 .classname
   @extend .col
