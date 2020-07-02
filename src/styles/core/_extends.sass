@@ -142,6 +142,27 @@
   text-align: right
 
 
+// Text styles
+.txt-uppercase
+  text-transform: uppercase
+
+.txt-loswercase
+  text-transform: loswercase
+
+
+// Border radius
+.base-radius
+  border-radius: 4px
+
+.round-radius
+  border-radius: 100%
+
+
+// Shadows
+.base-shadow
+  box-shadow: 1px 1px 1px $clr-black
+
+
 // Transitions
 .slow-transition
   transition: all .45s ease
@@ -151,6 +172,9 @@
 
 .fast-transition
   transition: all .15s ease
+
+.no-transition
+  transition: none
 
 
 // Helpers
@@ -168,5 +192,5 @@
 .no-overflow
   overflow: hidden
 
-.txt-uppercase
-  text-transform: uppercase
+.no-events 
+  pointer-events: none

@@ -69,8 +69,6 @@ module.exports = {
         ]
       },
 
-      
-
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
@@ -121,5 +119,6 @@ module.exports = {
       logo: './src/assets/logo.png',
       prefix: 'favicons/'
     })
+    
   ]
 };
