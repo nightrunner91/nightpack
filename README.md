@@ -31,7 +31,7 @@ npm run build
 - SVG inline loader
 - Images loader
 
-### Templates
+### PUG Templates
 
 It uses PUG mixins to construct flexible pages. You can use use [index.pug](src/views/index.pug) as an example.
 ```
@@ -82,6 +82,27 @@ new HtmlWebPackPlugin({
   filename: "./index.html"
 }),
 ```
+### SASS structure
+Just like in PUG Templates I use [BEM methodology](https://en.bem.info/methodology/css/) to separate **B**locks and **E**lements. Default file structure looks lke this:
+```
+styles
+  ├── animations
+      └── _animations.sass
+  ├── blocks
+      ├── _header.sass
+      ├── _footer.sass
+  ├── core
+      ├── _colors.sass
+      ├── _extends.sass
+      ├── _grid.sass
+      ├── _mixins.sass
+      ├── _normalize.sass
+      ├── _typography.sass
+  ├── elements
+      ├── _button.sass
+      ├── etc...
+  main.sass
+```
 
 ### Grid system
 
@@ -111,6 +132,6 @@ With this, you can use @media queries like this:
 ```
 @media #{$lg-up} // styles will apply on LG+ resolutions (>1140px)
 @media #{$sm-dw} // styles will apply on SM- resolutions (<648px)
-@media #{md-lg} // styles will apply between MB and LG resolutions only (>960px && <1140px)
+@media #{md-lg} // styles will apply between MD and LG resolutions only (>960px && <1140px)
 ```
 See [_grid.sass](src/styles/core/_grid.sass) file for more details
