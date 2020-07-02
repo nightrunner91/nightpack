@@ -35,6 +35,7 @@ npm run build
 - [PUG Templates](#pug-templates)
 - [SASS Structure](#sass-structure)
 - [Grid system](#grid-system)
+- [Javascript structure](#javascript-structure)
 
 ### PUG Templates
 
@@ -154,7 +155,7 @@ With this, you can use @media queries like this:
 ```
 See [_grid.sass](src/styles/core/_grid.sass) file for more details
 
-### Custom javascript
+### Javascript structure
 
 I prefer to separate my own JS code in modules and then import them in one file. Default file structure looks like this:
 ```
