@@ -111,7 +111,7 @@ styles
 ```
 I use [SASS @extends](https://sass-lang.com/documentation/at-rules/extend) feature very often, thats why I included many useful shortenings in [_extends.sass](src/styles/core/_extends.sass) file. 
 
-Output css files will include all needed prefixes thanks to PostCSS loder. You can configure which ones loader will apply in [package.json](package.json#L37) file. See [documentation](https://www.npmjs.com/package/postcss-loader) for more details. 
+Output css files will include all needed prefixes thanks to PostCSS loder. You can configure which ones loader will apply in [package.json](package.json#L37) file. See [documentation](https://github.com/postcss/postcss-loader) for more details. 
 ```
 "browserslist": [
   "defaults",
@@ -188,4 +188,16 @@ document.addEventListener('DOMContentLoaded', function(){
   // Success notification
   console.log('%c app ready ', 'background: yellow; color: black')
 });
+```
+### `Images loader`
+
+It uses [File Loader](https://webpack.js.org/loaders/file-loader/) to serve images from /assets folder. After build all images will be in /images folder.
+
+PUG:
+```
+img(src='../assets/logo.png' alt='')
+```
+SASS:
+```
+background-image: url(../assets/logo.png)
 ```
