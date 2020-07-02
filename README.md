@@ -207,15 +207,24 @@ document.addEventListener('DOMContentLoaded', function(){
 
 It uses [File Loader](https://webpack.js.org/loaders/file-loader/) to serve images from `/assets` folder. After build all images will be in `/images` folder.
 
+**PUG**:
+```
+img(src='../assets/logo.png' alt='')
+```
+**SASS**:
+```
+background-image: url(../assets/logo.png)
+```
+Output will look something like this:
+
 **PUG/HTML**:
 ```
-img(src='../assets/logo.png' alt='') // input
-img(src='images/logo.png' alt='') // output
+img(src='images/logo.png' alt='')
+<img src='images/logo.png' alt=''>
 ```
 **SASS/CSS**:
 ```
-background-image: url(../assets/logo.png) // input
-background-image: url(images/logo.png) // output
+background-image: url(images/logo.png)
 ```
 ### `SVG Inline loader`
 
