@@ -229,7 +229,9 @@ Of course it's not the only method you can use to serve SVG icons, that's why I 
 
 ### `SVG Sprite`
 
-### Favicon generator
+TODO
+
+### `Favicon generator`
 
 Just write path to target image in [webpack.config.js](webpack.config.js#118) and [Favicons Webpack Plugin](https://github.com/jantimon/favicons-webpack-plugin) will do the rest! 
 ```
