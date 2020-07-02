@@ -31,6 +31,9 @@ npm run build
 - SVG inline loader
 - Images loader
 
+## Documentation
+[PUG Templates](#pug-templates)
+
 ### PUG Templates
 
 It uses PUG mixins to construct flexible pages. You can use use [index.pug](src/views/index.pug) as an example.
