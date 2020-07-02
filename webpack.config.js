@@ -2,7 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
 
@@ -83,12 +84,26 @@ module.exports = {
         ],
       },
 
+      // {
+      //   test: /\.svg/,
+      //   use: {
+      //     loader: 'svg-url-loader',
+      //     options: {}
+      //   }
+      // },
+
       {
-        test: /\.svg/,
-        use: {
-          loader: 'svg-url-loader',
-          options: {}
-        }
+        test: /\.svg$/,
+        use: [
+          { loader: 'svg-sprite-loader', options: {} },
+          { loader: 'svgo-loader', options: {
+            plugins: [
+              {removeTitle: true},
+              {convertColors: {shorthex: false}},
+              {convertPathData: false}
+            ]
+          }}
+        ]
       }
 
     ]
@@ -118,7 +133,9 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: './src/assets/logo.png',
       prefix: 'favicons/'
-    })
-    
+    }),
+
+    new SpriteLoaderPlugin()
+
   ]
 };

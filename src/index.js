@@ -5,3 +5,8 @@ import "./styles/main.sass";
 import "./scripts/app.js";
 
 // Import images
+
+
+// Import svg icons
+import "./assets/smile.svg"
+import "./assets/raw.svg"
