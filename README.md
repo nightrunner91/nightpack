@@ -28,3 +28,19 @@ npm run build
 - SVG inline loader
 - Images loader
 
+### Grid system
+
+It uses custom 12 column grid system based on flex. You can use it in pug/html or in css
+```
+div.col.lg-6.md-6.sm-6.xs-6.mb-12
+```
+```
+.classname
+  @extend .col
+  @extend .lg-6
+  @extend .md-6
+  @extend .sm-6
+  @extend .xs-6
+  @extend .mb12
+ ```
+ 
