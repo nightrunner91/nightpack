@@ -46,6 +46,21 @@ npm run build
 
 ### `PUG Templates`
 
+```
+views
+  ├── blocks
+      ├── _header.pug
+      ├── _footer.pug
+      ├── etc...
+  ├── core
+      ├── _fonts.pug
+      ├── _meta.pug
+  └── elements
+      ├── _button.pug
+      ├── etc...
+  _mixins.pug
+  index.pug
+```
 It uses PUG mixins to construct flexible pages. You can use use [index.pug](src/views/index.pug) as an example.
 ```
 include _mixins
@@ -72,21 +87,7 @@ html(lang='en')
     +footer
 ```
 File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders.
-```
-views
-  ├── blocks
-      ├── _header.pug
-      ├── _footer.pug
-      ├── etc...
-  ├── core
-      ├── _fonts.pug
-      ├── _meta.pug
-  └── elements
-      ├── _button.pug
-      ├── etc...
-  _mixins.pug
-  index.pug
-```
+
 Don't forget to add new pages in [webpack.config.js](webpack.config.js) file. See [html-webpack-plugin documentation](https://github.com/jantimon/html-webpack-plugin) for more details.
 ```
 // Index.html
