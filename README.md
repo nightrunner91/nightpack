@@ -215,7 +215,7 @@ background-image: url(../assets/logo.png)
 ```
 ### `SVG Inline loader`
 
-⚠ **You will need to define which method you will use to serve SVG icons - inline loader or sprite loader. You can't use both at the same time!**
+⚠ **You will need to define which method you will use to serve SVG icons — inline or sprite. You can't use both at the same time!**
 
 It uses [svg-url-loader](https://github.com/bhovhannes/svg-url-loader) to inject SVG icons directly in HTML/CSS as base64 data url. It's by far my favourite method to work with static svg icons, because browser won't make an extra http call to download the image and even if image is in browser cache images with data url appear on screen faster (see [this page](https://github.com/bhovhannes/svg-url-loader/issues/341)). 
 
