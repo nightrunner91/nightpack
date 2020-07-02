@@ -30,7 +30,7 @@ npm run build
 
 ### Grid system
 
-It uses custom 12 column grid system based on flex. You can use it both in pug or sass
+It uses custom 12 column grid system based on flex. You can use it both in PUG or SASS. I personally prefer SASS method because output HTML looks pretty and clean.
 ```
 div.col.lg-6.md-6.sm-6.xs-6.mb-12
 ```
@@ -58,4 +58,4 @@ With this, you can use @media queries like this:
 @media #{$sm-dw} // styles will apply on SM- resolutions (<648px)
 @media #{mb-lg} // styles will apply between MB and LG resolutions only (>320px && <1140px)
 ```
-See 
+See [_grid.sass](src/styles/core/_grid.sass) file for more details
