@@ -203,8 +203,27 @@ background-image: url(../assets/logo.png)
 ```
 ### `SVG Inline loader`
 
-It used [https://github.com/bhovhannes/svg-url-loader](svg-url-loader) to inject SVG icons directly in HTML as base64 code. It's by far my favourite method to work with static svg icons, because browser won't make an extra http call to download the image and even if image is in browser cache images with data url appear on screen faster (see [this thredd](https://github.com/bhovhannes/svg-url-loader/issues/341)). 
+It uses [https://github.com/bhovhannes/svg-url-loader](svg-url-loader) to inject SVG icons directly in HTML as base64 code. It's by far my favourite method to work with static svg icons, because browser won't make an extra http call to download the image and even if image is in browser cache images with data url appear on screen faster (see [this page](https://github.com/bhovhannes/svg-url-loader/issues/341)). 
 
-Of course it's not the only method you can use to serve SVG icons, that's why I also use SVG-sprite
+Usage is similar to Images loader:
+**PUG**:
+```
+img(src='../assets/logo.svg' alt='')
+```
+**SASS**:
+```
+background-image: url(../assets/logo.svg)
+```
+Output will look something like this:
+
+**PUG**:
+```
+img(src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M0 0v32h32V0H0zm21.2 8.8h-2.5c-.5 0-1 .5-1 .9v2.5h3.5c-.1 1.9-.4 3.7-.4 3.7h-3.1V27h-4.6V16h-2.3v-3.7h2.3V9.2c0-.5-.1-4.3 4.7-4.3h3.4v3.9z' fill='%23c15143'/%3E%3C/svg%3E' alt='')
+```
+**SASS**:
+```
+background-image: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M0 0v32h32V0H0zm21.2 8.8h-2.5c-.5 0-1 .5-1 .9v2.5h3.5c-.1 1.9-.4 3.7-.4 3.7h-3.1V27h-4.6V16h-2.3v-3.7h2.3V9.2c0-.5-.1-4.3 4.7-4.3h3.4v3.9z' fill='%23c15143'/%3E%3C/svg%3E)
+```
+Of course it's not the only method you can use to serve SVG icons, that's why I also use SVG-sprite as my second favourite method 😉
 
 ### `SVG Sprite`
