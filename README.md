@@ -233,7 +233,33 @@ Of course it's not the only method you can use to serve SVG icons, that's why I 
 
 ### `SVG Sprite`
 
-TODO
+It uses [SVG sprite loader](https://github.com/JetBrains/svg-sprite-loader) to serve SVG icons aswell. But you need to define which method you will use. To use this method insted of SVG Inline loader you will need to uncomment these lines of code in [webpack.config.js](webpack.config.js) file:
+
+```
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
+rules: [
+  {
+    test: /\.svg$/,
+    loader: 'svg-sprite-loader'
+  }
+],
+
+plugins: [
+  new SpriteLoaderPlugin()
+]
+```
+
+This method will allow you to use SVG icons from authomaticaly generated SVG sprite mounted to <body>. First, you will need to import icon in [index.js](index.js) like this:
+
+```
+import "./assets/icon.svg"
+```
+And then insert it to PUG file like this:
+```
+svg: use(xlink:href='#smile')
+```
+Of course you can configure loader as you want, but I found this settings most usefull and simple.
 
 ### `Favicon generator`
 
