@@ -110,6 +110,18 @@ styles
 ```
 I use [SASS @extends](https://sass-lang.com/documentation/at-rules/extend) feature very often, thats why I included many useful shortenings in [_extends.sass](src/styles/core/_extends.sass) file. 
 
+Output css files will include all needed prefixes thanks to PostCSS loder. You can configure which ones loader will apply in [package.json](package.json) file. See [documentation](https://www.npmjs.com/package/postcss-loader) for more details. 
+```
+"browserslist": [
+  "defaults",
+  "not ie < 11",
+  "last 2 versions",
+  "> 1%",
+  "iOS 7",
+  "last 3 iOS versions"
+]
+```
+
 ### Grid system
 
 It uses custom 12 column grid system based on flex. You can use it both in PUG or SASS. I personally prefer SASS method because output HTML looks pretty and clean.
@@ -123,7 +135,7 @@ div.col.lg-6.md-6.sm-6.xs-6.mb-12
   @extend .md-6
   @extend .sm-6
   @extend .xs-6
-  @extend .mb12
+  @extend .mb-12
 ```
 It also includes list of popular breakpoints:
 ```
