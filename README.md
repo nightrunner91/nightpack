@@ -134,7 +134,9 @@ It uses custom 12 column grid system based on flex. Actually, you can modify num
 
 **PUG**:
 ```
-div.col.lg-6.md-6.sm-6.xs-6.mb-12
+.col.lg-6.md-6.sm-6.xs-6.mb-12
+// or
+div(class='col lg-6 md-6 sm-6 xs-6 mb-12')
 ```
 **SASS**:
 ```
