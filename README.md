@@ -45,7 +45,7 @@ npm run build
 - [Favicon generator](#favicon-generator)
 
 ### `PUG Templates`
-
+File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders.
 ```
 views
   ├── blocks
@@ -86,7 +86,6 @@ html(lang='en')
 
     +footer
 ```
-File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders.
 
 Don't forget to add new pages in [webpack.config.js](webpack.config.js) file. See [html-webpack-plugin documentation](https://github.com/jantimon/html-webpack-plugin) for more details.
 ```
