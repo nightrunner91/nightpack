@@ -98,11 +98,12 @@ styles
       ├── _mixins.sass
       ├── _normalize.sass
       ├── _typography.sass
-  ├── elements
+  └── elements
       ├── _button.sass
       ├── etc...
   main.sass
 ```
+I use [SASS @extends](https://sass-lang.com/documentation/at-rules/extend) feature very often, thats why I included many useful shortenings in [_extends.sass](src/styles/core/_extends.sass) file. 
 
 ### Grid system
 
