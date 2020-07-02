@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function(){
 ```
 ### `Images loader`
 
-It uses [File Loader](https://webpack.js.org/loaders/file-loader/) to serve images from /assets folder. After build all images will be in /images folder.
+It uses [File Loader](https://webpack.js.org/loaders/file-loader/) to serve images from `/assets` folder. After build all images will be in `/images` folder.
 
 **PUG**:
 ```
@@ -250,7 +250,7 @@ plugins: [
 ]
 ```
 
-This method will allow you to use SVG icons from authomaticaly generated SVG sprite mounted to `<body>`. First, you will need to import icon in [index.js](index.js) like this:
+This method will allow you to use SVG icons from authomaticaly generated SVG sprite mounted to `<body>`. First, you will need to import icon in [index.js](src/index.js) like this:
 
 ```
 import "./assets/icon.svg"
