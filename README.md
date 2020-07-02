@@ -1,6 +1,8 @@
-# Nightrunner's Front-end Boilerplate
-
-**Webpack based simple and pretty boilerplate for Front-end developement**
+<div align="center">
+  <img width="400" height="400" src="src/assets/logo.png">
+  <h1>Nightrunner's Front-end Boilerplate</h1>
+  <p>Webpack based simple and pretty boilerplate for Front-end developement</p>
+</div>
 
 ## How to use it?
 
