@@ -193,11 +193,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
 It uses [File Loader](https://webpack.js.org/loaders/file-loader/) to serve images from /assets folder. After build all images will be in /images folder.
 
-PUG:
+**PUG**:
 ```
 img(src='../assets/logo.png' alt='')
 ```
-SASS:
+**SASS**:
 ```
 background-image: url(../assets/logo.png)
 ```
+### `SVG Inline loader`
+
+It used [https://github.com/bhovhannes/svg-url-loader](svg-url-loader) to inject SVG icons directly in HTML as base64 code. It's by far my favourite method to work with static svg icons, because browser won't make an extra http call to download the image and even if image is in browser cache images with data url appear on screen faster (see [this thredd](https://github.com/bhovhannes/svg-url-loader/issues/341)). 
+
+Of course it's not the only method you can use to serve SVG icons, that's why I also use SVG-sprite
+
+### `SVG Sprite`
