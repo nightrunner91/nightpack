@@ -37,7 +37,7 @@ npm run build
 - [Grid system](#grid-system)
 - [Javascript structure](#javascript-structure)
 
-### PUG Templates
+### `PUG Templates`
 
 It uses PUG mixins to construct flexible pages. You can use use [index.pug](src/views/index.pug) as an example.
 ```
@@ -88,7 +88,7 @@ new HtmlWebPackPlugin({
   filename: "./index.html"
 }),
 ```
-### SASS structure
+### `SASS structure`
 Just like in PUG Templates I use [BEM methodology](https://en.bem.info/methodology/css/) to separate **B**locks and **E**lements. Default file structure looks lke this:
 ```
 styles
@@ -123,7 +123,7 @@ Output css files will include all needed prefixes thanks to PostCSS loder. You c
 ]
 ```
 
-### Grid system
+### `Grid system`
 
 It uses custom 12 column grid system based on flex. You can use it both in PUG or SASS. I personally prefer SASS method because output HTML looks pretty and clean.
 ```
@@ -155,7 +155,7 @@ With this, you can use @media queries like this:
 ```
 See [_grid.sass](src/styles/core/_grid.sass) file for more details
 
-### Javascript structure
+### `Javascript structure`
 
 I prefer to separate my own JS code in modules and then import them in one file. Default file structure looks like this:
 ```
