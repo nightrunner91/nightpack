@@ -110,7 +110,7 @@ styles
 ```
 I use [SASS @extends](https://sass-lang.com/documentation/at-rules/extend) feature very often, thats why I included many useful shortenings in [_extends.sass](src/styles/core/_extends.sass) file. 
 
-Output css files will include all needed prefixes thanks to PostCSS loder. You can configure which ones loader will apply in [package.json](package.json) file. See [documentation](https://www.npmjs.com/package/postcss-loader) for more details. 
+Output css files will include all needed prefixes thanks to PostCSS loder. You can configure which ones loader will apply in [package.json](package.json#L37) file. See [documentation](https://www.npmjs.com/package/postcss-loader) for more details. 
 ```
 "browserslist": [
   "defaults",
