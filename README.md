@@ -173,7 +173,7 @@ import plugin2 from './plugins/_plugin-2.js';
 import plugin3 from './plugins/_plugin-3.js';
 
 // Import external plugins
-
+import owlcarousel from 'owlcarousel';  // (as an example)
 
 document.addEventListener('DOMContentLoaded', function(){
   // Call my plugins
@@ -182,6 +182,7 @@ document.addEventListener('DOMContentLoaded', function(){
   plugin3()
 
   // Call external plugins
+  owlcarousel() // (as an example)
 
   // Success notification
   console.log('%c app ready ', 'background: yellow; color: black')
