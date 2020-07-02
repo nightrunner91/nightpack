@@ -32,7 +32,9 @@ npm run build
 - Images loader
 
 ## Documentation
-[PUG Templates](#pug-templates)
+- [PUG Templates](#pug-templates)
+- [SASS Structure](#sass-structure)
+- [Grid system](#grid-system)
 
 ### PUG Templates
 
