@@ -263,7 +263,7 @@ import "./assets/icon.svg"
 ```
 And then insert it to PUG file like this:
 ```
-svg: use(xlink:href='#smile')
+svg: use(xlink:href='#icon')
 ```
 Of course you can configure loader as you want, but I found this method most usefull and simple.
 
