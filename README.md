@@ -228,3 +228,14 @@ background-image: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 Of course it's not the only method you can use to serve SVG icons, that's why I also use SVG-sprite as my second favourite method 😉
 
 ### `SVG Sprite`
+
+### Favicon generator
+
+Just write path to target image in [webpack.config.js](webpack.config.js#118) and [Favicons Webpack Plugin](https://github.com/jantimon/favicons-webpack-plugin) will do the rest! 
+```
+// Favicons generator
+new FaviconsWebpackPlugin({
+  logo: './src/assets/logo.png',
+  prefix: 'favicons/'
+})
+```
