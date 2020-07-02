@@ -58,21 +58,21 @@ html(lang='en')
 
     +footer
 ```
-File [_mixins.pug](src/views/_mixins.pug) includes all types of blocks which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separate sections (**B**locks) and components (**E**lements) in different folders.
+File [_mixins.pug](src/views/_mixins.pug) includes all types of blocks which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders.
 ```
 //- Core
 include core/_meta
 include core/_fonts
 
 //- Components
-include components/_button
-include components/_dropdown
-include components/_avatar
-include components/_input
+include elements/_button
+include elements/_dropdown
+include elements/_avatar
+include elements/_input
 
 //- Sections
-include sections/_header
-include sections/_footer
+include blocks/_header
+include blocks/_footer
 ```
 Don't forget to add new pages in [webpack.config.js](webpack.config.js) file. See [html-webpack-plugin documentation](https://github.com/jantimon/html-webpack-plugin) for more details.
 ```
