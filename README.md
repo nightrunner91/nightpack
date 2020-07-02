@@ -73,6 +73,21 @@ html(lang='en')
 ```
 File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders.
 ```
+views
+  ├── blocks
+      ├── _header.pug
+      ├── _footer.pug
+      ├── etc...
+  ├── core
+      ├── _fonts.pug
+      ├── _meta.pug
+  └── elements
+      ├── _button.pug
+      ├── etc...
+  _mixins.pug
+  index.pug
+```
+```
 //- Core
 include core/_meta
 include core/_fonts
