@@ -153,3 +153,37 @@ With this, you can use @media queries like this:
 @media #{md-lg} // styles will apply between MD and LG resolutions only (>960px && <1140px)
 ```
 See [_grid.sass](src/styles/core/_grid.sass) file for more details
+
+### Custom javascript
+
+I prefer to separate my own JS code in modules and then import them in one file. Default file structure looks like this:
+```
+scripts
+  ├── plugins
+      ├── _plugin-1.js
+      ├── _plugin-2.js
+      ├── _plugin-3.js
+      ├── etc...
+  app.js
+```
+```
+// Import my plugins
+import plugin1 from './plugins/_plugin-1.js';
+import plugin2 from './plugins/_plugin-2.js';
+import plugin3 from './plugins/_plugin-3.js';
+
+// Import external plugins
+
+
+document.addEventListener('DOMContentLoaded', function(){
+  // Call my plugins
+  plugin1(param1, param2);
+  plugin2(param1);
+  plugin3()
+
+  // Call external plugins
+
+  // Success notification
+  console.log('%c app ready ', 'background: yellow; color: black')
+});
+```
