@@ -203,9 +203,10 @@ background-image: url(../assets/logo.png)
 ```
 ### `SVG Inline loader`
 
-It uses [https://github.com/bhovhannes/svg-url-loader](svg-url-loader) to inject SVG icons directly in HTML as base64 code. It's by far my favourite method to work with static svg icons, because browser won't make an extra http call to download the image and even if image is in browser cache images with data url appear on screen faster (see [this page](https://github.com/bhovhannes/svg-url-loader/issues/341)). 
+It uses [svg-url-loader](https://github.com/bhovhannes/svg-url-loader) to inject SVG icons directly in HTML/CSS as base64 data url. It's by far my favourite method to work with static svg icons, because browser won't make an extra http call to download the image and even if image is in browser cache images with data url appear on screen faster (see [this page](https://github.com/bhovhannes/svg-url-loader/issues/341)). 
 
 Usage is similar to Images loader:
+
 **PUG**:
 ```
 img(src='../assets/logo.svg' alt='')
