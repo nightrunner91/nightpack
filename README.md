@@ -58,13 +58,17 @@ html(lang='en')
 
     +footer
 ```
-File [_mixins.pug](src/views/_mixins.pug) includes all types of blocks which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details.
+File [_mixins.pug](src/views/_mixins.pug) includes all types of blocks which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separate sections (**B**locks) and components (**E**lements) in different folders.
 ```
 //- Core
 include core/_meta
 include core/_fonts
 
 //- Components
+include components/_button
+include components/_dropdown
+include components/_avatar
+include components/_input
 
 //- Sections
 include sections/_header
