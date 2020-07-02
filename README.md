@@ -306,6 +306,12 @@ And then insert it to PUG file like this:
 ```
 svg: use(xlink:href='#icon')
 ```
+Output in HTML will be:
+```
+<svg>
+  <use xlink:href="#icon"></use>
+</svg>
+```
 Of course you can configure loader as you want, but I found this method most usefull and simple. 
 
 And as you can mention, both methods uses [SVGO Loader](https://github.com/rpominov/svgo-loader) to optimize SVG icons. You can read more about this in [SVGO documentation](https://github.com/svg/svgo#what-it-can-do). 
