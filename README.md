@@ -268,6 +268,22 @@ plugins: [
   new SpriteLoaderPlugin()
 ]
 ```
+And comment or remove SVG inline loader settings:
+```
+{
+  test: /\.svg/,
+  use: [
+    { loader: 'svg-url-loader', options: {} },
+    { loader: 'svgo-loader', options: {
+      plugins: [
+        {removeTitle: true},
+        {convertColors: {shorthex: false}},
+        {convertPathData: false}
+      ]
+    }}
+  ]
+},
+```
 
 This method will allow you to use SVG icons from authomaticaly generated SVG sprite mounted to `<body>`. First, you will need to import icon in [index.js](src/index.js) like this:
 
