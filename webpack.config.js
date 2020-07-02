@@ -44,16 +44,32 @@ module.exports = {
           }
         }],
       },
-      
+
       {
         test: /\.sass$/,
         use: [
-            MiniCssExtractPlugin.loader,
-            // "style-loader", // style nodes from js strings
-            "css-loader",
-            "sass-loader"
+          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: 'css-loader', options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              config: {
+                path: 'postcss.config.js'
+              }
+            }
+          },
+          {
+            loader: 'sass-loader', options: { sourceMap: true }
+          }
         ]
       },
+
+      
 
       {
         test: /\.(png|jpe?g|gif)$/i,
