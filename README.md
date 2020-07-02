@@ -87,21 +87,6 @@ views
   _mixins.pug
   index.pug
 ```
-```
-//- Core
-include core/_meta
-include core/_fonts
-
-//- Components
-include elements/_button
-include elements/_dropdown
-include elements/_avatar
-include elements/_input
-
-//- Sections
-include blocks/_header
-include blocks/_footer
-```
 Don't forget to add new pages in [webpack.config.js](webpack.config.js) file. See [html-webpack-plugin documentation](https://github.com/jantimon/html-webpack-plugin) for more details.
 ```
 // Index.html
