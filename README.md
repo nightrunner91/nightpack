@@ -250,7 +250,7 @@ plugins: [
 ]
 ```
 
-This method will allow you to use SVG icons from authomaticaly generated SVG sprite mounted to <body>. First, you will need to import icon in [index.js](index.js) like this:
+This method will allow you to use SVG icons from authomaticaly generated SVG sprite mounted to `<body>`. First, you will need to import icon in [index.js](index.js) like this:
 
 ```
 import "./assets/icon.svg"
