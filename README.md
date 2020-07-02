@@ -24,11 +24,13 @@ npm run build
 
 - PUG
 - SASS (with PostCSS autoprefixer)
+- Flex Grid
 - Normalize.css
 - Babel
 - Hot reload server
 - Favicon generator
-- SVG inline loader
+- SVG Inline base64 loader
+- SVG Sprite loader
 - Images loader
 
 ## Documentation
