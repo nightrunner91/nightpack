@@ -35,6 +35,7 @@ npm run build
 - Favicon generator
 
 ## Documentation
+
 - [PUG Templates](#pug-templates)
 - [SASS Structure](#sass-structure)
 - [Grid system](#grid-system)
@@ -45,6 +46,7 @@ npm run build
 - [Favicon generator](#favicon-generator)
 
 ### `PUG Templates`
+
 File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders.
 ```
 views
@@ -96,6 +98,7 @@ new HtmlWebPackPlugin({
 }),
 ```
 ### `SASS structure`
+
 Just like in PUG Templates I use [BEM methodology](https://en.bem.info/methodology/css/) to separate **B**locks and **E**lements. Default file structure looks lke this:
 ```
 styles
@@ -325,5 +328,21 @@ new FaviconsWebpackPlugin({
   prefix: 'favicons/'
 })
 ```
-### Building project
+### `Building project`
 
+Output file structre looks like this:
+
+```
+dist
+  ├── favicons
+      ├── favicon.ico
+      ├── etc...
+  ├── images
+      ├── _image-1.png
+      ├── _image-2.png
+      ├── _image-3.jpg
+      ├── etc...
+  index.html
+  main.css
+  main.js
+```
