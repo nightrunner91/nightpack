@@ -72,7 +72,7 @@ views
   index.pug
 ```
 
-It uses PUG [mixins](https://pugjs.org/language/mixins.html) and [layouts](https://pugjs.org/language/inheritance.html) to construct flexible pages. File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. Layout is written in [_default.pug] file.
+Nightpack uses PUG [mixins](https://pugjs.org/language/mixins.html) and [layouts](https://pugjs.org/language/inheritance.html) to construct flexible pages. File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. Layout is written in [_default.pug](src/views/layouts/_default.pug) file.
 
 **Default layout**:
 
@@ -116,7 +116,7 @@ block content
 Don't forget to add new pages in [webpack.config.js](webpack.config.js) file. See [html-webpack-plugin documentation](https://github.com/jantimon/html-webpack-plugin) for more details.
 
 ```
-// Index.html
+// index.html
 new HtmlWebPackPlugin({
   template: "./src/views/index.pug",
   filename: "./index.html"
@@ -165,7 +165,7 @@ Output css files will include all needed prefixes thanks to PostCSS loder. You c
 
 ### `Grid system`
 
-It uses custom 12 column grid system based on flex. Actually, you can modify number of columns. For example, 24 or 36 depends on project you work on. You can use grid system both in PUG or SASS. I personally prefer SASS method because in that case output HTML looks pretty and clean.
+Nightpack uses custom 12 column grid system based on flex. Actually, you can modify number of columns. For example, 24 or 36 depends on project you work on. You can use grid system both in PUG or SASS. I personally prefer SASS method because in that case output HTML looks pretty and clean.
 
 **PUG**:
 
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 ### `Images loader`
 
-It uses [File Loader](https://webpack.js.org/loaders/file-loader/) to serve images from `/assets` folder. After build all images will be in `/images` folder.
+Nightpack uses [File Loader](https://webpack.js.org/loaders/file-loader/) to serve images from `/assets` folder. After build all images will be in `/images` folder.
 
 **PUG**:
 
@@ -279,7 +279,7 @@ background-image: url(images/logo.png);
 
 ⚠ **You will need to define which method you will use to serve SVG icons — inline or sprite. You can't use both at the same time!**
 
-It uses [svg-url-loader](https://github.com/bhovhannes/svg-url-loader) to inject SVG icons directly in HTML/CSS as base64 data url. It's by far my favourite method to work with static svg icons, because browser won't make an extra http call to download the image and even if image is in browser cache images with data url appear on screen faster (see [this page](https://github.com/bhovhannes/svg-url-loader/issues/341)). 
+Nightpack uses [svg-url-loader](https://github.com/bhovhannes/svg-url-loader) to inject SVG icons directly in HTML/CSS as base64 data url. It's by far my favourite method to work with static svg icons, because browser won't make an extra http call to download the image and even if image is in browser cache images with data url appear on screen faster (see [this page](https://github.com/bhovhannes/svg-url-loader/issues/341)). 
 
 Usage is similar to Images loader:
 
