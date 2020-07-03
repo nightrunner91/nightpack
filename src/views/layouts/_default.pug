@@ -1,0 +1,21 @@
+include ../_mixins
+
+block globalVars
+  - var fooGlobal = 'foo'
+
+block innerVars
+
+doctype html
+html(lang='en')
+
+  head
+    +meta
+    +fonts
+
+  body
+
+    +header
+    
+    block content
+
+    +footer
