@@ -52,7 +52,7 @@ npm run build
 
 ### `PUG Templates`
 
-File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. See [PUG documentation](https://pugjs.org/language/mixins.html) for more details. I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders.
+I personally use [BEM methodology](https://en.bem.info/methodology/css/) thats why I separated **B**locks and  **E**lements in different folders. File structure of PUG files looks like this:
 
 ```
 views
@@ -63,19 +63,26 @@ views
   ├── core
       ├── _fonts.pug
       ├── _meta.pug
-  └── elements
+  ├── elements
       ├── _button.pug
       ├── etc...
+  └── layouts
+      ├── _default.pug
   _mixins.pug
   index.pug
 ```
 
-It uses PUG mixins to construct flexible pages. You can use use [index.pug](src/views/index.pug) as an example.
+It uses PUG [mixins](https://pugjs.org/language/mixins.html) and [layouts](https://pugjs.org/language/inheritance.html) to construct flexible pages. File [_mixins.pug](src/views/_mixins.pug) includes all blocks and elements which template will use. Layout is written in [_default.pug] file.
+
+**Default layout**:
 
 ```
-include _mixins
+include ../_mixins
 
-- var foo = 'foo'
+block globalVars
+  - var fooGlobal = 'foo'
+
+block innerVars
 
 doctype html
 html(lang='en')
@@ -88,13 +95,22 @@ html(lang='en')
 
     +header
     
-    main.main
-      +hero(param1, param2)
-      +carousel(param)
-      +section(foo)
-      // etc...
+    block content
 
     +footer
+```
+
+**Page**
+
+```
+extends layouts/_default
+
+block innerVars
+  - var fooLocal = 'foo'
+
+block content
+
+  main.main
 ```
 
 Don't forget to add new pages in [webpack.config.js](webpack.config.js) file. See [html-webpack-plugin documentation](https://github.com/jantimon/html-webpack-plugin) for more details.
