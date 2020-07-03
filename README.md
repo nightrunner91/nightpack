@@ -67,7 +67,7 @@ views
       ├── _button.pug
       ├── etc...
   └── layouts
-      ├── _default.pug
+      └── _default.pug
   _mixins.pug
   index.pug
 ```
