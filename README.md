@@ -1,5 +1,6 @@
 <div align="center">
-  <img width="200" height="200" src="src/assets/logo.png">
+  <img width="200" height="200" src="src/assets/logo-wp.png">
+  <img width="200" height="200" src="src/assets/logo-sn.png">
   <h1>Nightrunner's Front-end Boilerplate</h1>
   <p>Webpack based simple and pretty boilerplate for Front-end developement</p>
 </div>
