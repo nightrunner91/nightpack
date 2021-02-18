@@ -137,7 +137,7 @@ module.exports = {
     
     // Favicons generator
     new FaviconsWebpackPlugin({
-      logo: './src/assets/logo.png',
+      logo: './src/assets/logo-sn.png',
       prefix: 'favicons/'
     }),
 
