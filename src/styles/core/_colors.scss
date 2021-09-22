@@ -1,21 +1,20 @@
 $colors: (
   'black': #000,
   'white': #fff,
-  'main': #6041DC,
 );
 
 $levels: (
-  1: 10%,
-  2: 20%,
-  3: 30%,
-  4: 40%,
-  5: 50%,
+  1: 5%,
+  2: 10%,
+  3: 15%,
+  4: 20%,
+  5: 25%,
 );
 
 @each $name, $code in $colors {
   .bg-#{$name} { background-color: $code }
   .clr-#{$name} { color: $code }
-  .fill-#{$name} { color: $code }
+  .fill-#{$name} { fill: $code }
 
   @each $level, $rate in $levels {
     .bg-#{$name}-light-#{$level} { background-color: lighten($code, $rate) }
