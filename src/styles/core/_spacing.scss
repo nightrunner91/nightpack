@@ -32,20 +32,20 @@ $spacers: (
   @media screen and (min-width: #{$size}px) {
     @each $name, $indent in $spacers {
       .p-#{$breakpoint}-#{$name} { padding: $indent }
-      .p-#{$breakpoint}-t-#{$name} { padding-top: $indent }
-      .p-#{$breakpoint}-l-#{$name} { padding-left: $indent }
-      .p-#{$breakpoint}-b-#{$name} { padding-bottom: $indent }
-      .p-#{$breakpoint}-r-#{$name} { padding-right: $indent }
-      .p-#{$breakpoint}-x-#{$name} { padding-left: $indent; padding-right: $indent }
-      .p-#{$breakpoint}-y-#{$name} { padding-top: $indent; padding-bottom: $indent }
+      .pt-#{$breakpoint}-#{$name} { padding-top: $indent }
+      .pl-#{$breakpoint}-#{$name} { padding-left: $indent }
+      .pb-#{$breakpoint}-#{$name} { padding-bottom: $indent }
+      .pr-#{$breakpoint}-#{$name} { padding-right: $indent }
+      .px-#{$breakpoint}-#{$name} { padding-left: $indent; padding-right: $indent }
+      .py-#{$breakpoint}-#{$name} { padding-top: $indent; padding-bottom: $indent }
   
       .m-#{$breakpoint}-#{$name} { margin: $indent }
-      .m-#{$breakpoint}-t-#{$name} { margin-top: $indent }
-      .m-#{$breakpoint}-l-#{$name} { margin-left: $indent }
-      .m-#{$breakpoint}-b-#{$name} { margin-bottom: $indent }
-      .m-#{$breakpoint}-r-#{$name} { margin-right: $indent }
-      .m-#{$breakpoint}-x-#{$name} { margin-left: $indent; margin-right: $indent }
-      .m-#{$breakpoint}-y-#{$name} { margin-top: $indent; margin-bottom: $indent }
+      .mt-#{$breakpoint}-#{$name} { margin-top: $indent }
+      .ml-#{$breakpoint}-#{$name} { margin-left: $indent }
+      .mb-#{$breakpoint}-#{$name} { margin-bottom: $indent }
+      .mr-#{$breakpoint}-#{$name} { margin-right: $indent }
+      .mx-#{$breakpoint}-#{$name} { margin-left: $indent; margin-right: $indent }
+      .my-#{$breakpoint}-#{$name} { margin-top: $indent; margin-bottom: $indent }
     }
   }
 }
