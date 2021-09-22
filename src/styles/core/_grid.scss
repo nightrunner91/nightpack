@@ -1,5 +1,5 @@
 $num-cols:           12;
-$gutter-width:       1.5em;
+$gutter-width:       1em;
 $container-width:    1140px;
 
 $breakpoints: (
@@ -15,7 +15,6 @@ $xs-sm: "screen and (min-width: #{map-get($breakpoints, 'xs') + 'px'}) and (max-
 $sm-md: "screen and (min-width: #{map-get($breakpoints, 'sm') + 'px'}) and (max-width: #{map-get($breakpoints, 'md') - 1px})" !default;
 $md-lg: "screen and (min-width: #{map-get($breakpoints, 'md') + 'px'}) and (max-width: #{map-get($breakpoints, 'lg') - 1px})" !default;
 $lg-xl: "screen and (min-width: #{map-get($breakpoints, 'lg') + 'px'}) and (max-width: #{map-get($breakpoints, 'xl') - 1px})" !default;
-
 
 // Queries based on min-width
 $xs-up: "screen and (min-width: #{map-get($breakpoints, 'xs') + 'px'})" !default;
@@ -57,21 +56,31 @@ $xl-dw: "screen and (max-width: #{map-get($breakpoints, 'xl') + 'px'})" !default
   -ms-flex-preferred-size: 100%;
 }
 
+// Base grid
+$i: 0;
+@while $i <= $num-cols {
+  $perc: if($i > 0, unquote((100 / ($num-cols / $i)) + "%"), 0%);
+  .col-#{$i} {
+    flex-basis: $perc;
+    max-width: $perc;
+    -ms-flex-preferred-size: $perc;
+  }
+  .off-#{$i} { margin-left: $perc }
+  $i: $i + 1;
+}
+
+// Grid based on breakpoints
 @each $breakpoint, $size in $breakpoints {
   @media screen and (min-width: #{$size}px) {
     $i: 0;
-
     @while $i <= $num-cols {
       $perc: if($i > 0, unquote((100 / ($num-cols / $i)) + "%"), 0%);
-
       .#{$breakpoint}-#{$i} {
         flex-basis: $perc;
         max-width: $perc;
         -ms-flex-preferred-size: $perc;
       }
-
-      .off-#{$breakpoint}-#{$i}  { margin-left: $perc }
-      
+      .off-#{$breakpoint}-#{$i} { margin-left: $perc }
       $i: $i + 1;
     }
   }
