@@ -1,0 +1,72 @@
+$displays: (none, block, inline, inline-block, flex, inline-flex);
+$directions: (row, row-reverse, column, column-reverse);
+$justifies: (start, end, center, between, around);
+$aligns: (start, end, center, baseline, stretch);
+$wraps: (nowrap, wrap, wrap-reverse);
+
+
+@each $display in $displays {
+  .d-#{$display} { display: $display !important }
+}
+
+@each $direction in $directions {
+  .flex-#{$direction} { flex-direction: $direction !important }
+}
+
+@each $justify in $justifies {
+  .justify-content-#{$justify} {
+    justify-content: if($justify == between or $justify == around, space-#{$justify}, $justify) !important
+  }
+}
+
+@each $align in $aligns {
+  .align-items-#{$align} { align-items: $align !important }
+  .align-self-#{$align} { align-self: $align !important }
+  .align-content-#{$align} { align-content: $align !important }
+}
+
+@each $wrap in $wraps {
+  .flex-#{$wrap} { flex-wrap: $wrap !important }
+}
+
+$i: 0;
+@while $i <= $num-cols {
+  .order-#{$i} { order: #{$i} }
+  $i: $i + 1;
+}
+
+
+@each $breakpoint, $size in $breakpoints {
+  @media screen and (min-width: #{$size}px) {
+    @each $display, $type in $displays {
+      .d-#{$breakpoint}-#{$display} { display: $display !important }
+    }
+
+    @each $direction in $directions {
+      .flex-#{$breakpoint}-#{$direction} { flex-direction: $direction !important }
+    }
+
+    @each $justify in $justifies {
+      .justify-content-#{$breakpoint}-#{$justify} {
+        justify-content: if($justify == between or $justify == around, space-#{$justify}, $justify) !important
+      }
+    }
+
+    @each $align in $aligns {
+      .align-items-#{$breakpoint}-#{$align} { align-items: $align !important }
+      .align-self-#{$breakpoint}-#{$align} { align-self: $align !important }
+      .align-content-#{$breakpoint}-#{$align} { align-content: $align !important }
+    }
+
+    @each $wrap in $wraps {
+      .flex-#{$breakpoint}-#{$wrap} { flex-wrap: $wrap !important }
+    }
+
+    $i: 0;
+    @while $i <= $num-cols {
+      .order-#{$breakpoint}-#{$i} { order: #{$i} }
+      $i: $i + 1;
+    }
+  }
+}
+

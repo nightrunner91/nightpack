@@ -80,7 +80,7 @@ $i: 0;
         max-width: $perc;
         -ms-flex-preferred-size: $perc;
       }
-      .off-#{$breakpoint}-#{$i} { margin-left: $perc }
+      .offset-#{$breakpoint}-#{$i} { margin-left: $perc }
       $i: $i + 1;
     }
   }
