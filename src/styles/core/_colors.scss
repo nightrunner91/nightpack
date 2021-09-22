@@ -1,0 +1,36 @@
+$colors: (
+  'black': #000,
+  'white': #fff,
+  'main': #6041DC,
+);
+
+$levels: (
+  1: 10%,
+  2: 20%,
+  3: 30%,
+  4: 40%,
+  5: 50%,
+);
+
+@each $name, $code in $colors {
+  .bg-#{$name} { background-color: $code }
+  .clr-#{$name} { color: $code }
+  .fill-#{$name} { color: $code }
+
+  @each $level, $rate in $levels {
+    .bg-#{$name}-lt-#{$level} { background-color: lighten($code, $rate) }
+    .bg-#{$name}-dk-#{$level} { background-color: darken($code, $rate) }
+    .bg-#{$name}-st-#{$level} { background-color: saturate($code, $rate) }
+    .bg-#{$name}-dt-#{$level} { background-color: desaturate($code, $rate) }
+
+    .clr-#{$name}-lt-#{$level} { background-color: lighten($code, $rate) }
+    .clr-#{$name}-dk-#{$level} { background-color: darken($code, $rate) }
+    .clr-#{$name}-st-#{$level} { background-color: saturate($code, $rate) }
+    .clr-#{$name}-dt-#{$level} { background-color: desaturate($code, $rate) }
+
+    .fill-#{$name}-lt-#{$level} { background-color: lighten($code, $rate) }
+    .fill-#{$name}-dk-#{$level} { background-color: darken($code, $rate) }
+    .fill-#{$name}-st-#{$level} { background-color: saturate($code, $rate) }
+    .fill-#{$name}-dt-#{$level} { background-color: desaturate($code, $rate) }
+  }
+}

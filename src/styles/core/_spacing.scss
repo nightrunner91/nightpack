@@ -1,0 +1,51 @@
+$spacers: (
+  25: 0.25em,
+  50: 0.5em,
+  1: 1em,
+  2: 2em,
+  3: 3em,
+  4: 4em,
+  5: 5em
+);
+
+// Global
+@each $name, $indent in $spacers {
+  .p-#{$name} { padding: $indent }
+  .pt-#{$name} { padding-top: $indent }
+  .pl-#{$name} { padding-left: $indent }
+  .pb-#{$name} { padding-bottom: $indent }
+  .pr-#{$name} { padding-right: $indent }
+  .px-#{$name} { padding-left: $indent; padding-right: $indent }
+  .py-#{$name} { padding-top: $indent; padding-bottom: $indent }
+
+  .m-#{$name} { margin: $indent }
+  .mt-#{$name} { margin-top: $indent }
+  .ml-#{$name} { margin-left: $indent }
+  .mb-#{$name} { margin-bottom: $indent }
+  .mr-#{$name} { margin-right: $indent }
+  .mx-#{$name} { margin-left: $indent; margin-right: $indent }
+  .my-#{$name} { margin-top: $indent; margin-bottom: $indent }
+}
+
+// Breakpoints
+@each $breakpoint, $size in $breakpoints {
+  @media screen and (min-width: #{$size}px) {
+    @each $name, $indent in $spacers {
+      .p-#{$breakpoint}-#{$name} { padding: $indent }
+      .p-#{$breakpoint}-t-#{$name} { padding-top: $indent }
+      .p-#{$breakpoint}-l-#{$name} { padding-left: $indent }
+      .p-#{$breakpoint}-b-#{$name} { padding-bottom: $indent }
+      .p-#{$breakpoint}-r-#{$name} { padding-right: $indent }
+      .p-#{$breakpoint}-x-#{$name} { padding-left: $indent; padding-right: $indent }
+      .p-#{$breakpoint}-y-#{$name} { padding-top: $indent; padding-bottom: $indent }
+  
+      .m-#{$breakpoint}-#{$name} { margin: $indent }
+      .m-#{$breakpoint}-t-#{$name} { margin-top: $indent }
+      .m-#{$breakpoint}-l-#{$name} { margin-left: $indent }
+      .m-#{$breakpoint}-b-#{$name} { margin-bottom: $indent }
+      .m-#{$breakpoint}-r-#{$name} { margin-right: $indent }
+      .m-#{$breakpoint}-x-#{$name} { margin-left: $indent; margin-right: $indent }
+      .m-#{$breakpoint}-y-#{$name} { margin-top: $indent; margin-bottom: $indent }
+    }
+  }
+}
