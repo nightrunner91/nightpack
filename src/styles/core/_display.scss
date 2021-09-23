@@ -51,3 +51,15 @@ $wraps: (nowrap, wrap, wrap-reverse);
   justify-content: center;
   align-items: center;
 }
+
+@mixin invisible($state) {
+  visibility: $state;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}

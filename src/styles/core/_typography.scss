@@ -101,8 +101,11 @@ hr {
   border-bottom: 1px solid map-get($colors, 'black');
 }
 
-mark,
 ::selection {
   background-color: map-get($colors, 'black');
   color: lighten(map-get($colors, 'black'), 75%);
+}
+
+mark {
+  background-color: rgba(map-get($colors, 'black'), 0.75);
 }

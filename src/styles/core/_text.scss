@@ -2,6 +2,8 @@ $aligns: left, center, right, justify;
 $weights: normal, bold, lighter, bolder, 100, 200, 300, 400, 500, 600, 700, 800, 900;
 $transforms: lowercase, uppercase, capitalize;
 $styles: normal, italic, oblique;
+$decorations: underline, line-through, none;
+
 
 @mixin makeText($breakpoint:null) {
   @each $align in $aligns {
@@ -18,6 +20,10 @@ $styles: normal, italic, oblique;
   
   @each $style in $styles {
     .font#{$breakpoint}-#{$style} { font-style: $style; }
+  }
+
+  @each $decoration in $decorations {
+    .text#{$breakpoint}-#{$decoration} { text-decoration: $decoration; }
   }
 }
 
