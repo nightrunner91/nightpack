@@ -5,60 +5,38 @@ $radiuses: (
   'zero': 0
 );
 
-// Global
-@each $name, $size in $radiuses {
-  .radius-#{$name} { border-radius: $size !important }
+@mixin makeRadius($breakpoint:null) {
+  @each $name, $size in $radiuses {
+    .radius#{$breakpoint}-#{$name} { border-radius: $size !important }
 
-  .radius-tl-#{$name} { border-top-left-radius: $size !important }
-  .radius-tr-#{$name} { border-top-right-radius: $size !important }
-  .radius-bl-#{$name} { border-bottom-left-radius: $size !important }
-  .radius-br-#{$name} { border-bottom-right-radius: $size !important }
+    .radius-tl#{$breakpoint}-#{$name} { border-top-left-radius: $size !important }
+    .radius-tr#{$breakpoint}-#{$name} { border-top-right-radius: $size !important }
+    .radius-bl#{$breakpoint}-#{$name} { border-bottom-left-radius: $size !important }
+    .radius-br#{$breakpoint}-#{$name} { border-bottom-right-radius: $size !important }
 
-  .radius-t-#{$name} {
-    border-top-left-radius: $size !important;
-    border-top-right-radius: $size !important;
-  }
-  .radius-r-#{$name} {
-    border-top-right-radius: $size !important;
-    border-bottom-right-radius: $size !important;
-  }
-  .radius-b-#{$name} {
-    border-bottom-left-radius: $size !important;
-    border-bottom-right-radius: $size !important;
-  }
-  .radius-l-#{$name} {
-    border-top-left-radius: $size !important;
-    border-bottom-left-radius: $size !important;
+    .radius-t#{$breakpoint}-#{$name} {
+      border-top-left-radius: $size !important;
+      border-top-right-radius: $size !important;
+    }
+    .radius-r#{$breakpoint}-#{$name} {
+      border-top-right-radius: $size !important;
+      border-bottom-right-radius: $size !important;
+    }
+    .radius-b#{$breakpoint}-#{$name} {
+      border-bottom-left-radius: $size !important;
+      border-bottom-right-radius: $size !important;
+    }
+    .radius-l#{$breakpoint}-#{$name} {
+      border-top-left-radius: $size !important;
+      border-bottom-left-radius: $size !important;
+    }
   }
 }
 
-// Breakpoints
+@include makeRadius();
+
 @each $breakpoint, $size in $breakpoints {
   @media screen and (min-width: #{$size}px) {
-    @each $name, $size in $radiuses {
-      .radius-#{$breakpoint}-#{$name} { border-radius: $size !important }
-    
-      .radius-tl-#{$breakpoint}-#{$name} { border-top-left-radius: $size !important }
-      .radius-tr-#{$breakpoint}-#{$name} { border-top-right-radius: $size !important }
-      .radius-bl-#{$breakpoint}-#{$name} { border-bottom-left-radius: $size !important }
-      .radius-br-#{$breakpoint}-#{$name} { border-bottom-right-radius: $size !important }
-    
-      .radius-t-#{$breakpoint}-#{$name} {
-        border-top-left-radius: $size !important;
-        border-top-right-radius: $size !important;
-      }
-      .radius-r-#{$breakpoint}-#{$name} {
-        border-top-right-radius: $size !important;
-        border-bottom-right-radius: $size !important;
-      }
-      .radius-b-#{$breakpoint}-#{$name} {
-        border-bottom-left-radius: $size !important;
-        border-bottom-right-radius: $size !important;
-      }
-      .radius-l-#{$breakpoint}-#{$name} {
-        border-top-left-radius: $size !important;
-        border-bottom-left-radius: $size !important;
-      }
-    }
+    @include makeRadius('-' + $breakpoint);
   }
 }

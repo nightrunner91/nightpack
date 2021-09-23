@@ -56,32 +56,24 @@ $xl-dw: "screen and (max-width: #{map-get($breakpoints, 'xl') + 'px'})" !default
   -ms-flex-preferred-size: 100%;
 }
 
-// Base grid
-$i: 0;
-@while $i <= $num-cols {
-  $perc: if($i > 0, unquote((100 / ($num-cols / $i)) + "%"), 0%);
-  .col-#{$i} {
-    flex-basis: $perc;
-    max-width: $perc;
-    -ms-flex-preferred-size: $perc;
+@mixin makeGrid($breakpoint:null) {
+  $i: 0;
+  @while $i <= $num-cols {
+    $perc: if($i > 0, unquote((100 / ($num-cols / $i)) + "%"), 0%);
+    .col#{$breakpoint}-#{$i} {
+      flex-basis: $perc;
+      max-width: $perc;
+      -ms-flex-preferred-size: $perc;
+    }
+    .offset#{$breakpoint}-#{$i} { margin-left: $perc }
+    $i: $i + 1;
   }
-  .off-#{$i} { margin-left: $perc }
-  $i: $i + 1;
 }
 
-// Grid based on breakpoints
+@include makeGrid();
+
 @each $breakpoint, $size in $breakpoints {
   @media screen and (min-width: #{$size}px) {
-    $i: 0;
-    @while $i <= $num-cols {
-      $perc: if($i > 0, unquote((100 / ($num-cols / $i)) + "%"), 0%);
-      .#{$breakpoint}-#{$i} {
-        flex-basis: $perc;
-        max-width: $perc;
-        -ms-flex-preferred-size: $perc;
-      }
-      .offset-#{$breakpoint}-#{$i} { margin-left: $perc }
-      $i: $i + 1;
-    }
+    @include makeGrid('-' + $breakpoint)
   }
 };
