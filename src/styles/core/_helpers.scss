@@ -1,0 +1,17 @@
+.pseudoelem { 
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+.no-select { user-select: none }
+
+.no-overflow { overflow: hidden }
+
+.no-events  { pointer-events: none }
+
+$cursors: pointer, help, wait, move, not-allowed;
+
+@each $cursor in $cursors {
+  .cursor-#{$cursor} { cursor: $cursor; }
+}
