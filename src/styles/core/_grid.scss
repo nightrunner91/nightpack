@@ -33,25 +33,25 @@ $xl-dw: "screen and (max-width: #{map-get($breakpoints, 'xl') + 'px'})" !default
 // Container settings
 .container  {
   margin: 0 auto;
+  padding: 0 $gutter-width / 2;
   width: 100%;
   max-width: $container-width;
-  padding: 0 $gutter-width / 2;
 }
 
 // Row settings
 .row  {
-  margin-left: ($gutter-width / -2);
-  margin-right: ($gutter-width / -2);
   display: flex;
   flex-wrap: wrap;
+  margin-left: ($gutter-width / -2);
+  margin-right: ($gutter-width / -2);
 }
 
 // Column settigns
 .col {
-  padding: 0 ($gutter-width / 2);
-  margin: 0;
   position: relative;
   flex-basis: 100%;
+  padding: 0 ($gutter-width / 2);
+  margin: 0;
   max-width: 100%;
   -ms-flex-preferred-size: 100%;
 }

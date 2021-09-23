@@ -3,23 +3,27 @@ $base-fz: 16px;
 $base-lh: 1.5em;
 $base-fw: 400;
 $base-mg: 1em;
-$small-fz: 0.75; // ratio
+$small-fz: 0.75; // ratio of how lower will be font-size for <small> tag
+
 
 // Headings
 $headings-fz: (
-  h1: 44px,
-  h2: 36px,
-  h3: 28px,
+  h1: 48px,
+  h2: 38px,
+  h3: 30px,
   h4: 24px,
   h5: 18px,
   h6: 16px,
 );
-$headings-lh: 1.2;
+$headings-lh: 1.25em;
 $headings-fw: 700;
 $headings-margins: (
   top: 0,
   bottom: 1em,
 );
+$headings-breake: 'sm'; // on which breakpoint headings will have lowered font-size
+$headings-decrease: 0.75; // ratio of how lower will be font-size for headings after breakpoint
+
 
 // Font families
 $font-families: (
@@ -56,7 +60,11 @@ h1, h2, h3, h4, h5, h6 {
 @each $heading, $size in $headings-fz {
   #{$heading},
   .#{$heading} {
-    font-size: $size
+    font-size: $size;
+
+    @media screen and (min-width: map-get($breakpoints, $headings-breake)px) {
+      font-size: $size * $headings-decrease
+    }
   }
 }
 
