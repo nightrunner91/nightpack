@@ -21,15 +21,35 @@ $headings-margins: (
   top: 0,
   bottom: 1em,
 );
-$headings-breake: 'sm'; // on which breakpoint headings will have lowered font-size
+$headings-breake: true; // should or not headings be lowered on specific breakpoint
+$headings-breakepoint: 'sm'; // on which breakpoint headings will have lowered font-size
 $headings-decrease: 0.75; // ratio of how lower will be font-size for headings after breakpoint
 
 
 // Font families
 $font-families: (
   base: "Open Sans",
-  headings: "Open Sans"
+  headings: "Open Sans",
+  displays: "Open Sans"
 );
+
+
+// Displays
+$displays-fz: (
+  display-1: 74px,
+  display-2: 62px,
+  display-3: 48px,
+  display-4: 34px,
+);
+$displays-lh: 1.25em;
+$displays-fw: 500;
+$displays-margins: (
+  top: 0,
+  bottom: 1em,
+);
+$displays-breake: true; // should or not displays be lowered on specific breakpoint
+$displays-breakepoint: 'sm'; // on which breakpoint displays will have lowered font-size
+$displays-decrease: 0.75; // ratio of how lower will be font-size for displays after breakpoint
 
 
 body {
@@ -62,8 +82,25 @@ h1, h2, h3, h4, h5, h6 {
   .#{$heading} {
     font-size: $size;
 
-    @media screen and (min-width: map-get($breakpoints, $headings-breake)px) {
-      font-size: $size * $headings-decrease
+    @if ($headings-breake) {
+      @media screen and (min-width: map-get($breakpoints, $headings-breakepoint)px) {
+        font-size: $size * $headings-decrease
+      }
+    }
+  }
+}
+
+@each $display, $size in $displays-fz {
+  .#{$display} {
+    font-size: $size;
+    font-family: map-get($font-families, displays), sans-serif;
+    font-weight: $displays-fw;
+    line-height: $displays-lh;
+
+    @if ($displays-breake) {
+      @media screen and (min-width: map-get($breakpoints, $displays-breakepoint)px) {
+        font-size: $size * $displays-decrease
+      }
     }
   }
 }
