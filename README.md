@@ -100,7 +100,9 @@ $xl-dw // below 1440px
 Here are some examples of usage:
 
 ```
-@media #{$lg-up} // styles will apply above 1200px
-@media #{$sm-dw} // styles will apply below 768px
-@media #{md-lg} // styles will apply between 1024px and 1200px
+.example {
+  @media #{$lg-up} { ... } // styles will apply above 1200px
+  @media #{$sm-dw} { ... } // styles will apply below 768px
+  @media #{$md-lg} { ... } // styles will apply between 1024px and 1200px
+}
 ```
