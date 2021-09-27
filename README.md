@@ -75,3 +75,32 @@ div {
   @extend .col-12;
 }
 ```
+
+There are prepared media queries for SCSS usage:
+
+```
+$xs-sm // between 576px and 768px
+$sm-md // between 768px and 1024px
+$md-lg // between 1024px and 1200px
+$lg-xl // between 1200px and 1440px
+
+$xs-up // above 576px
+$sm-up // above 768px
+$md-up // above 1024px
+$lg-up // above 1200px
+$xl-up // above 1440px
+
+$xs-dw // below 576px
+$sm-dw // below 768px
+$md-dw // below 1024px
+$lg-dw // below 1200px
+$xl-dw // below 1440px
+```
+
+Here are some examples of usage:
+
+```
+@media #{$lg-up} // styles will apply above 1200px
+@media #{$sm-dw} // styles will apply below 768px
+@media #{md-lg} // styles will apply between 1024px and 1200px
+```
