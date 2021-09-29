@@ -1,5 +1,5 @@
 // Import styles
-import "./styles/main.sass";
+import "./styles/main.scss";
 
 // Import app
 import "./scripts/app.js";
