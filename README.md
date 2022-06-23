@@ -7,6 +7,8 @@
 
 NightPack is a development framework based on [Webpack 4.x](https://webpack.js.org/). While many other frameworks offer ready-to-use UI solutions, NightPack gives you the maximum freedom to develop your own web interfaces. The ideological basis of the framework is the most useful utilities from [Bootstrap 4.x](https://getbootstrap.com/docs/4.6/getting-started/introduction/), many of which have been improved. NightPack uses best practices from [Material Design 2](https://material.io/) throughout. The framework is powered by [Webpack CLI 3.x](https://webpack.js.org/api/cli/), one of the most convenient tools for developing modern websites.
 
+NightPack is build for Front-end developers who don't like rewriting the built-in styling solutions of third-party frameworks and plugins. It's for those who prefer to develop "from scratch". For those who need framework with ready-to-use UI solutions, we would recomend to use popular ones like [Bootstrap](https://bootstrap.org/), [Materialize](https://materializecss.com/), [Foundation](https://get.foundation/), or whatever you like.
+
 # What's Included? 📦
 
 **Modules:**
