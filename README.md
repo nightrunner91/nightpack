@@ -23,8 +23,8 @@ NightPack is build for Front-end developers who don't like rewriting the built-i
 * html-loader v0.5.5
 * mini-css-extract-plugin v0.8.0
 * pug-html-loader v1.1.5
-* svg-sprite-loader v5.0.0"
-* svg-url-loader v5.0.1"
+* svg-sprite-loader v5.0.0
+* svg-url-loader v5.0.1
 
 **Features:**
 * Hot-reload dev server
