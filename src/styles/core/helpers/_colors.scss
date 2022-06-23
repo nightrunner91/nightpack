@@ -1,0 +1,59 @@
+/// This code generates classnames from $colors, $grays and $theme-colors maps
+/// Each color will have unique classname with background-color, color and fill
+/// For each color in $colors and $theme-colors maps will be generated
+/// classnames with suffixes -light-${level} and -dark-${level} with brightened and darkened colors
+/// 
+/// @author nightrunner91
+/// 
+/// @link https://github.com/nightrunner91/nightvue
+/// @link https://developer.mozilla.org/ru/docs/Web/CSS/background-color
+/// @link https://developer.mozilla.org/ru/docs/Web/CSS/color
+/// @link https://developer.mozilla.org/ru/docs/Web/SVG/Tutorial/Fills_and_Strokes#using_css
+/// 
+/// @output
+///   .bg-red { background-color: #F44336 }
+///   .bg-gray-5 { background-color: #959595 }
+///   .bg-primary { background-color: #682CAB }
+///   .clr-secondary-light-2 { color: #42a6f5 }
+///   .fill-secondary-dark-4 { fill: #1971b6 }
+
+// Generate classnames from $colors map
+@each $name, $code in $colors {
+  .bg-#{$name} { background-color: $code !important }
+  .clr-#{$name} { color: $code !important }
+  .fill-#{$name} { fill: $code !important }
+
+  // Adjust colors brighteness and darkness based on $levels map values
+  @each $level, $rate in $levels {
+    .bg-#{$name}-light-#{$level} { background-color: mix(white, $code, $rate) !important }
+    .bg-#{$name}-dark-#{$level} { background-color: mix(black, $code, $rate) !important }
+    .clr-#{$name}-light-#{$level} { color: mix(white, $code, $rate) !important }
+    .clr-#{$name}-dark-#{$level} { color: mix(black, $code, $rate) !important }
+    .fill-#{$name}-light-#{$level} { fill: mix(white, $code, $rate) !important }
+    .fill-#{$name}-dark-#{$level} { fill: mix(black, $code, $rate) !important }
+  }
+}
+
+// Generate classnames from $grays map
+@each $name, $code in $grays {
+  .bg-#{$name} { background-color: $code !important }
+  .clr-#{$name} { color: $code !important }
+  .fill-#{$name} { fill: $code !important }
+}
+
+// Generate classnames from $theme-colors map
+@each $name, $code in $theme-colors {
+  .bg-#{$name} { background-color: $code !important }
+  .clr-#{$name} { color: $code !important }
+  .fill-#{$name} { fill: $code !important }
+
+  // Adjust colors brighteness and darkness based on $levels map values
+  @each $level, $rate in $levels {
+    .bg-#{$name}-light-#{$level} { background-color: mix(white, $code, $rate) !important }
+    .bg-#{$name}-dark-#{$level} { background-color: mix(black, $code, $rate) !important }
+    .clr-#{$name}-light-#{$level} { color: mix(white, $code, $rate) !important }
+    .clr-#{$name}-dark-#{$level} { color: mix(black, $code, $rate) !important }
+    .fill-#{$name}-light-#{$level} { fill: mix(white, $code, $rate) !important }
+    .fill-#{$name}-dark-#{$level} { fill: mix(black, $code, $rate) !important }
+  }
+}

@@ -1,0 +1,46 @@
+/// This code generates classnames for container, rows and cols
+/// NightVue grid system is quite similar to Bootstrap 5.x
+/// Nonetheless we are using entirely different approach to build mixins and functions
+/// See mixins.scss and varaibles.scss files for more details
+
+.container { @include container() }
+.row       { @include row() }
+.col       { @include col() }
+
+@mixin make-grid($breakpoint:null) {
+  $i: 1;
+  @while $i <= $num-cols {
+    .col#{$breakpoint}-#{$i}    { @include col-width($i) }
+    .offset#{$breakpoint}-#{$i} { margin-left: percent($i, $num-cols) }
+    .order#{$breakpoint}-#{$i}  { order: $i }
+    $i: $i + 1;
+  }
+}
+
+@include make-grid();
+
+@each $breakpoint, $size in $breakpoints {
+  @media screen and (min-width: #{$size}) {
+    @include make-grid('-' + $breakpoint)
+  }
+};
+
+/// This is simple setup for smooth transiiton between router pages
+/// It uses fade-in / fade-out transition by default
+/// 
+/// @link https://router.vuejs.org/guide/advanced/transitions.html
+/// @link https://learnvue.co/2021/01/4-awesome-examples-of-vue-router-transitions/
+/// @link https://www.digitalocean.com/community/tutorials/vuejs-vue-routing-transitions
+
+.layout {
+  &.page-enter,
+  &.page-leave-to {
+    .main {
+      opacity: 0;
+    }
+  }
+}
+
+.main {
+  transition: transition(opacity, lazy);
+}
