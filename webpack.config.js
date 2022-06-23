@@ -123,7 +123,7 @@ module.exports = {
     
     // Favicons generator
     new FaviconsWebpackPlugin({
-      logo: './src/assets/logo-sn.png',
+      logo: './src/assets/images/logo.png',
       prefix: 'favicons/'
     }),
 

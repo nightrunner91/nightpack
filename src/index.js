@@ -5,3 +5,6 @@ import "./styles/style.scss";
 import "./scripts/app.js";
 
 // Import svg icons
+import "./assets/icons/face.svg";
+import "./assets/icons/lightbulb.svg";
+import "./assets/icons/link.svg";
