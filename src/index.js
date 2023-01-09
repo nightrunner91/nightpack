@@ -1,4 +1,5 @@
 // Import styles
+import "./styles/nightvue.scss";
 import "./styles/style.scss";
 
 // Import app

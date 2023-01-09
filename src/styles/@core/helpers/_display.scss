@@ -23,19 +23,12 @@
 ///      }
 ///   }
 
-$displays: (block, inline, inline-block, flex, inline-flex, none);
+$displays: (block, inline, inline-block, flex, inline-flex, table, table-cell, table-row, none);
 $directions: (row, row-reverse, column, column-reverse);
 $justifies: (start, end, center, between, around);
 $aligns: (start, end, center, baseline, stretch);
 $wraps: (nowrap, wrap, wrap-reverse);
 $grows: (0, 1);
-
-// Very usefull classname, when you just need to align item in center and forget about it ;)
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 @mixin make-displays($breakpoint: null) {
   @each $display, $type in $displays {
@@ -60,6 +53,12 @@ $grows: (0, 1);
   @each $grow in $grows {
     .flex#{$breakpoint}-grow-#{$grow} { flex-grow: $grow !important; }
     .flex#{$breakpoint}-shrink-#{$grow} { flex-shrink: $grow !important; }
+  }
+  // Very usefull classname, when you just need to align item in center and forget about it ;)
+  .flex#{$breakpoint}-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

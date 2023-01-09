@@ -1,15 +1,16 @@
 /// This code generates utility classnames for text based on maps in "Typography" section
-/// See varaibles.scss file for more details
+/// See variables.scss file for more details
 /// Each of this classnames supports breakpoints from $breakpoints map
 /// 
 /// @author nightrunner91
 /// 
-/// @link https://github.com/nightrunner91/nightvue
+/// @link https://github.com/nightrunner91/nightvue/#typography
 /// @link https://developer.mozilla.org/ru/docs/Web/CSS/font-family
 /// @link https://developer.mozilla.org/ru/docs/Web/CSS/line-height
 /// @link https://developer.mozilla.org/ru/docs/Web/CSS/text-align
 /// @link https://developer.mozilla.org/ru/docs/Web/CSS/text-decoration
 /// @link https://developer.mozilla.org/ru/docs/Web/CSS/white-space
+/// @link https://developer.mozilla.org/ru/docs/Web/CSS/word-break
 /// @link https://developer.mozilla.org/ru/docs/Web/CSS/text-transform
 /// @link https://developer.mozilla.org/ru/docs/Web/CSS/font-weight
 /// @link https://developer.mozilla.org/ru/docs/Web/CSS/font-style
@@ -29,7 +30,10 @@
     .text#{$breakpoint}-#{$decoration} { text-decoration: $value !important; }
   }
   @each $wrap, $value in $text-wraps {
-    .text#{$breakpoint}-#{$wrap} { white-space: $value !important; }
+    .white-space#{$breakpoint}-#{$wrap} { white-space: $value !important; }
+  }
+  @each $break, $value in $word-brakes {
+    .word-break#{$breakpoint}-#{$break} { word-break: $value !important; }
   }
   @each $transform, $value in $text-transforms {
     .text#{$breakpoint}-#{$transform} { text-transform: $value !important; }

@@ -1,18 +1,100 @@
+// ================ //
+// ===== Grid ===== //
+// ================ //
+
+/// Base grid settings
+$num-cols:      12;
+$gutter-width:  1rem;
+
+$grid-type: 'combined';
+/// 👉 boxed      => on each $breakpoint container will have fixed max-width based on $containers map
+/// 👉 combined   => container will have max-width of LAST value from $containers map, then will have 100%
+/// 👉 full       => container will ALWAYS have 100% width
+
+/// Breakpoints are dublicated in 'store/modules/config.js'
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1400px
+);
+
+/// Containers max-widths (if you are using 'boxed' or 'combined' type)
+$containers: (
+  xs: 540px,
+  sm: 720px,
+  md: 960px,
+  lg: 1140px,
+  xl: 1320px
+);
+
+// Queries between breakpoints
+$xs-sm: "screen and (min-width: #{map-get($breakpoints, 'xs')}) and (max-width: #{map-get($breakpoints, 'sm') - 1px})" !default;
+$sm-md: "screen and (min-width: #{map-get($breakpoints, 'sm')}) and (max-width: #{map-get($breakpoints, 'md') - 1px})" !default;
+$md-lg: "screen and (min-width: #{map-get($breakpoints, 'md')}) and (max-width: #{map-get($breakpoints, 'lg') - 1px})" !default;
+$lg-xl: "screen and (min-width: #{map-get($breakpoints, 'lg')}) and (max-width: #{map-get($breakpoints, 'xl') - 1px})" !default;
+
+// Queries based on min-width
+$xs-up: "screen and (min-width: #{map-get($breakpoints, 'xs')})" !default;
+$sm-up: "screen and (min-width: #{map-get($breakpoints, 'sm')})" !default;
+$md-up: "screen and (min-width: #{map-get($breakpoints, 'md')})" !default;
+$lg-up: "screen and (min-width: #{map-get($breakpoints, 'lg')})" !default;
+$xl-up: "screen and (min-width: #{map-get($breakpoints, 'xl')})" !default;
+
+// Queries based on max-width
+$xs-dw: "screen and (max-width: #{map-get($breakpoints, 'xs') - 1px})" !default;
+$sm-dw: "screen and (max-width: #{map-get($breakpoints, 'sm') - 1px})" !default;
+$md-dw: "screen and (max-width: #{map-get($breakpoints, 'md') - 1px})" !default;
+$lg-dw: "screen and (max-width: #{map-get($breakpoints, 'lg') - 1px})" !default;
+$xl-dw: "screen and (max-width: #{map-get($breakpoints, 'xl') - 1px})" !default;
+
+
 // =================== //
 // ===== Spacing ===== //
 // =================== //
 
+$spacer: 1rem;
+
 $spacers: (
-  0:    0,
-  25:   .25rem,
-  50:   .5rem,
-  75:   .75rem,
-  1:    1rem,
-  2:    2rem,
-  3:    3rem,
-  4:    4rem,
-  5:    5rem,
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: ($spacer * .75),
+  4: ($spacer * 1),
+  5: ($spacer * 1.25),
+  6: ($spacer * 1.5),
+  7: ($spacer * 1.75),
+  8: ($spacer * 2),
+  9: ($spacer * 2.25),
+  10: ($spacer * 2.5),
+  11: ($spacer * 2.75),
+  12: ($spacer * 3),
+  13: ($spacer * 3.25),
+  14: ($spacer * 3.5),
+  15: ($spacer * 3.75),
+  16: ($spacer * 4),
+  17: ($spacer * 4.25),
+  18: ($spacer * 4.5),
+  19: ($spacer * 4.75),
+  20: ($spacer * 5),
   auto: auto
+);
+
+$base-mg: map-get($spacers, 1); // Universal margin used for <p>, <ul> etc.
+
+
+// ================== //
+// ===== Sizing ===== //
+// ================== //
+
+$sizings: (
+  0:    0,   // 0%   | 0vw   | 0vh
+  25:   25,  // 25%  | 25vw  | 25vh
+  50:   50,  // 50%  | 50vw  | 50vh
+  75:   75,  // 75%  | 75vw  | 75vh
+  100:  100, // 100% | 100vw | 100vh
+  auto: auto // auto
 );
 
 
@@ -21,9 +103,9 @@ $spacers: (
 // ====================== //
 
 $font-families: (
-  base:      "Onest",
-  headings:  "Onest",
-  displays:  "Onest"
+  base:      ("Onest", sans-serif),
+  headings:  ("Onest", sans-serif),
+  displays:  ("Onest", sans-serif),
 );
 
 $line-heights: (
@@ -82,6 +164,13 @@ $text-wraps: (
   pre-wrap: pre-wrap
 );
 
+$word-brakes: (
+  normal:      normal,
+  break-all:   break-all,
+  keep-all:    keep-all,
+  break-word:  break-word,
+);
+
 $letter-spacings: (
   normal:  normal,
   tight:   -0.05em,
@@ -100,8 +189,8 @@ $headings-fz: (
 $headings-lh: map-get($line-heights, 25);
 $headings-fw: map-get($font-weights, 500);
 $headings-margins: (
-  top: 1.5em,
-  bottom: 0.5em,
+  top: map-get($spacers, 1),
+  bottom: map-get($spacers, 50),
 );
 
 $displays-fz: (
@@ -113,43 +202,58 @@ $displays-fz: (
 $displays-lh: map-get($line-heights, 25);
 $displays-fw: map-get($font-weights, 500);
 $displays-margins: (
-  top: 1.5em,
-  bottom: 1em,
+  top: map-get($spacers, 1),
+  bottom: map-get($spacers, 50),
 );
+
+$base-fz:      16px; // CRUCIAL VALUE! A lot of things depends on it. Be aware.
+$base-lh:      map-get($line-heights, 50);
+$base-fw:      map-get($font-weights, 400);
+
+$small-fz:     0.875; // Ratio of text size for <small> tag and .small classname
+$small-lh:     map-get($line-heights, 25);
+$small-fw:     map-get($font-weights, 400);
+
+$tagline-fz:   1.25; // Ratio of text size for .tagline classname
+$tagline-lh:   map-get($line-heights, 50);
+$tagline-fw:   map-get($font-weights, 500);
 
 
 // ================== //
 // ===== Colors ===== //
 // ================== //
 
-// List of default colors
+// List of 'basic' colors
 $colors: (
-  'red':       #F44336,
-  'pink':      #EC407A,
-  'orange':    #FF9800,
-  'yellow':    #FFEE58,
-  'green':     #47b05b,
-  'brown':     #795548,
-  'teal':      #009688,
-  'cyan':      #00BCD4,
-  'blue':      #2196F3,
-  'purple':    #682CAB,
+  'red':      #F44336,
+  'pink':     #EC407A,
+  'orange':   #FF9800,
+  'yellow':   #FFEE58,
+  'green':    #47b05b,
+  'brown':    #795548,
+  'teal':     #009688,
+  'cyan':     #00BCD4,
+  'blue':     #2196F3,
+  'purple':   #682CAB,
 );
 
 // List of gray colors
-$grays: (); // Here we will store our colors
-$graysNum: 10; // Gray colors amount (how many colors from #fff to #000)
+$grays: (
+  'white':   #ffffff,
+  'gray-1':  #eaeaea,
+  'gray-2':  #d5d5d5,
+  'gray-3':  #bfbfbf,
+  'gray-4':  #aaaaaa,
+  'gray-5':  #959595,
+  'gray-6':  #cccccc,
+  'gray-7':  #6a6a6a,
+  'gray-8':  #555555,
+  'gray-9':  #404040,
+  'gray-10': #2b2b2b,
+  'black':   #000000,
+);
 
-// Generate map list of grey colors
-$grays: map-merge($grays, ('white' : white));
-@for $i from 1 through $graysNum {
-  $percent: 100 / ($graysNum + 2) * $i * 1%; // Evaluate percent 
-  $newGray: ('gray-#{$i}' : mix(black, white, $percent)); // Prepare temporary map
-  $grays: map-merge($grays, $newGray); // Add this map to original $grays map
-}
-$grays: map-merge($grays, ('black' : black));
-
-// Pick up theme colors
+// List of theme colors picked from two maps above
 $theme-colors: (
   'primary':    map-get($colors, 'purple'),
   'secondary':  map-get($colors, 'blue'),
@@ -161,13 +265,13 @@ $theme-colors: (
   'dark':       map-get($grays, 'gray-8'),
 );
 
-// Levels of mix() in $colors and $theme-colors lists
+// Levels of mix() and scale()
 $levels: (
   1: 10%,
-  2: 15%,
-  3: 20%,
-  4: 25%,
-  5: 30%,
+  2: 20%,
+  3: 30%,
+  4: 40%,
+  5: 50%,
 );
 
 
@@ -243,6 +347,26 @@ $gradients: (
   ),
 );
 
+
+// =================== //
+// ===== Opacity ===== //
+// =================== //
+
+$opacities: (
+  0: 0%,
+  1: 5%,
+  2: 15%,
+  3: 25%,
+  4: 35%,
+  5: 45%,
+  6: 55%,
+  7: 65%,
+  8: 75%,
+  9: 85%,
+  10: 95%
+);
+
+
 // ========================= //
 // ===== Border-radius ===== //
 // ========================= //
@@ -256,68 +380,18 @@ $radiuses: (
 );
 
 
-// ================ //
-// ===== Grid ===== //
-// ================ //
-
-/// Base grid settings
-$num-cols:      12;
-$gutter-width:  1rem;
-
-$grid-type: 'combined';
-/// 👉 boxed      => on each $breakpoint container will have fixed max-width based on $containers map
-/// 👉 combined   => container will have max-width of LAST value from $containers map, then will be 100%
-/// 👉 full       => container will ALWAYS have 100% width
-
-/// Breakpoints are dublicated in 'store/modules/config.js'
-$breakpoints: (
-  xs: 576px,
-  sm: 768px,
-  md: 992px,
-  lg: 1200px,
-  xl: 1400px
-);
-
-/// Containers max-widths (if you are using 'boxed' or 'combined' type)
-$containers: (
-  xs: 540px,
-  sm: 720px,
-  md: 960px,
-  lg: 1140px,
-  xl: 1320px
-);
-
-// Queries between breakpoints
-$xs-sm: "screen and (min-width: #{map-get($breakpoints, 'xs')}) and (max-width: #{map-get($breakpoints, 'sm') - 1px})" !default;
-$sm-md: "screen and (min-width: #{map-get($breakpoints, 'sm')}) and (max-width: #{map-get($breakpoints, 'md') - 1px})" !default;
-$md-lg: "screen and (min-width: #{map-get($breakpoints, 'md')}) and (max-width: #{map-get($breakpoints, 'lg') - 1px})" !default;
-$lg-xl: "screen and (min-width: #{map-get($breakpoints, 'lg')}) and (max-width: #{map-get($breakpoints, 'xl') - 1px})" !default;
-
-// Queries based on min-width
-$xs-up: "screen and (min-width: #{map-get($breakpoints, 'xs')})" !default;
-$sm-up: "screen and (min-width: #{map-get($breakpoints, 'sm')})" !default;
-$md-up: "screen and (min-width: #{map-get($breakpoints, 'md')})" !default;
-$lg-up: "screen and (min-width: #{map-get($breakpoints, 'lg')})" !default;
-$xl-up: "screen and (min-width: #{map-get($breakpoints, 'xl')})" !default;
-
-// Queries based on max-width
-$xs-dw: "screen and (max-width: #{map-get($breakpoints, 'xs') - 1px})" !default;
-$sm-dw: "screen and (max-width: #{map-get($breakpoints, 'sm') - 1px})" !default;
-$md-dw: "screen and (max-width: #{map-get($breakpoints, 'md') - 1px})" !default;
-$lg-dw: "screen and (max-width: #{map-get($breakpoints, 'lg') - 1px})" !default;
-$xl-dw: "screen and (max-width: #{map-get($breakpoints, 'xl') - 1px})" !default;
-
-
 // ======================= //
 // ===== Icons Sizes ===== //
 // ======================= //
 
 $icon-sizes: (
-  18,
-  24,
-  36,
-  48,
-  64
+  2xs: 0.625em, // 10px
+  xs:  0.75em,  // 12px
+  sm:  0.875em, // 14px
+  md:  1em,     // 16px
+  lg:  1.25em,  // 20px
+  xl:  1.5em,   // 24px
+  2xl: 2em,     // 32px
 );
 
 
@@ -329,6 +403,8 @@ $icon-sizes: (
 /// @link https://material.io/design/environment/light-shadows.html
 /// @link https://material.io/design/environment/elevation.html
 /// Sure you can remove them and/or add your own
+/// For example this website contains a lot of beautiful box-shadows:
+/// @link https://getcssscan.com/css-box-shadow-examples
 
 $shadows: (
   level-1: (0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)),
@@ -356,6 +432,7 @@ $transition-speed: (
 $transition-timings: (
   /// "Standard" and most usefull easings
   /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function#easing_functions
+  /// @link https://cubic-bezier.com/
   linear:       cubic-bezier(0, 0, 1, 1),
   ease:         cubic-bezier(0.25, 0.1, 0.25, 1),
   ease-in:      cubic-bezier(0.42, 0, 1, 1),
