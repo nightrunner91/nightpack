@@ -267,7 +267,7 @@ div(class="container")
 
 ### Sass grid mixins
 
-Although HTML method is very familiar to most developers, we highly recomend to use Sass mixins to build grid directly in SCSS files. This will make Vue templates noticeably cleaner and at the same time help keep all the styles in one place.
+Although HTML method is very familiar to most developers, we highly recomend to use Sass mixins to build grid directly in SCSS files. This will Pug templates noticeably cleaner and at the same time help keep all the styles in one place.
 
 To convert any selector to container just apply `@container()` mixin to it:
 ```
