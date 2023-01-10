@@ -13,7 +13,7 @@
     ///
     /// @author nightrunner91
     /// 
-    /// @link https://github.com/nightrunner91/nightvue
+    /// @link https://github.com/nightrunner91/nightpack
     /// @link https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Animations/
     ///
     /// @param $name:      { String } [animation name]
@@ -131,7 +131,7 @@
   ///
   /// @author nightrunner91
   /// 
-  /// @link https://github.com/nightrunner91/nightvue
+  /// @link https://github.com/nightrunner91/nightpack
   /// @link https://caniuse.com/?search=linear-gradient
   /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient
   /// @link https://www.colorzilla.com/gradient-editor/
@@ -164,7 +164,7 @@
   /// 
   /// @author nightrunner91
   /// 
-  /// @link https://github.com/nightrunner91/nightvue
+  /// @link https://github.com/nightrunner91/nightpack
   /// 
   /// @param $type:   { String }, [boxed | combined | full, default: combined]
   /// @param $gutter: { Number }, [defines left and right paddings, default: 1rem]
@@ -200,7 +200,7 @@
   /// 
   /// @author nightrunner91
   /// 
-  /// @link https://github.com/nightrunner91/nightvue
+  /// @link https://github.com/nightrunner91/nightpack
   /// 
   /// @param $gutter: { Number }, [defines left and right negative margins, default: 1rem / -2]
   /// 
@@ -222,7 +222,7 @@
   /// 
   /// @author nightrunner91
   /// 
-  /// @link https://github.com/nightrunner91/nightvue
+  /// @link https://github.com/nightrunner91/nightpack
   /// @link https://developer.mozilla.org/ru/docs/Web/CSS/flex-basis
   /// 
   /// @param $cols: { Number }, [number of columns to calculate, 1...12 based on $num-cols]
@@ -253,7 +253,7 @@
     /// 
     /// @author nightrunner91
     /// 
-    /// @link https://github.com/nightrunner91/nightvue
+    /// @link https://github.com/nightrunner91/nightpack
     /// 
     /// @param $cols: { Number } [number of columns by default, 1...12, default 12]
     /// @param $xs:   { Number } [number of columns for $xs breakpoint, 1...12, default 12]
@@ -315,7 +315,7 @@
     /// 
     /// @author nightrunner91
     /// 
-    /// @link https://github.com/nightrunner91/nightvue
+    /// @link https://github.com/nightrunner91/nightpack
     /// 
     /// @param $cols: { Number } [number of columns by default, 1...12, default 12]
     /// @param $xs:   { Number } [number of columns for $xs breakpoint, 1...12, default 12]
@@ -374,7 +374,7 @@
     /// 
     /// @author nightrunner91
     /// 
-    /// @link https://github.com/nightrunner91/nightvue
+    /// @link https://github.com/nightrunner91/nightpack
     /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items
     /// @link https://css-tricks.com/almanac/properties/o/order/
     /// 
@@ -428,7 +428,7 @@
   ///
   /// @author nightrunner91
   ///
-  /// @link https://github.com/nightrunner91/nightvue
+  /// @link https://github.com/nightrunner91/nightpack
   /// 
   /// @example
   ///   @include small();
@@ -450,7 +450,7 @@
   ///
   /// @author nightrunner91
   ///
-  /// @link https://github.com/nightrunner91/nightvue
+  /// @link https://github.com/nightrunner91/nightpack
   /// 
   /// @example
   ///   @include tagline();
@@ -485,7 +485,7 @@
   ///
   /// @author nightrunner91
   ///
-  /// @link https://github.com/nightrunner91/nightvue
+  /// @link https://github.com/nightrunner91/nightpack
   ///
   /// @param $d1: { Number | String }, [required, dimension X (width)]
   /// @param $d2: { Number | String }, [dimension Y (height)]
@@ -543,7 +543,7 @@
   ///
   /// @author nightrunner91
   /// 
-  /// @link https://github.com/nightrunner91/nightvue
+  /// @link https://github.com/nightrunner91/nightpack
   /// @link https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
   /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow
   /// @link https://developer.mozilla.org/ru/docs/Web/CSS/white-space
