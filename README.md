@@ -231,67 +231,38 @@ $containers: (
   xl: 1320px
 );
 ```
-Remember that `$breakpoints` are dublicated in Vuex store in [config.js](src/store/modules/config.js) file. NightPack watches for [window resize event](https://developer.mozilla.org/ru/docs/Web/API/Window/resize_event) to update global Vuex store variables in real-time. It also constantly tracks current [scroll position](https://developer.mozilla.org/ru/docs/Web/API/Window/scrollY). You can read these values with computed properties `windowSize()`, `currentBreakpoint()` and `windowScroll()`.
 
-* `windowSize()` returns current window `width` and `height`
-* `currentBreakpoint()` returns current "morphological" breakpoint value based on window width. By defaults there might be: **'xs', 'sm', 'md', 'lg'** and **'xl'**
-* `windowScroll()` returns current scroll position
-
-```
-computed: {
-  windowSize() {
-    return this.$store.state.config.windowSize
-  },
-
-  currentBreakpoint() {
-    return this.$store.state.config.currentBreakpoint
-  }
-
-  windowScroll() {
-    return this.$store.state.config.windowScroll
-  },
-}
-```
 ### HTML grid usage
 
 To apply column width in HTML you can use prepared classnames `col-${breakpoint}-${value}`:
 ```
-<div class="container">
-  <div class="row">
-    <div class="col col-12 col-xs-10 col-sm-11 col-md-8 col-lg-6 col-xl-4">
+div(class="container")
+  div(class="row")
+    div(class="col col-12 col-xs-10 col-sm-11 col-md-8 col-lg-6 col-xl-4")
       width 12 by default
       width 10 on 'xs' breakpoint
       width 11 on 'sm' breakpoint
       width 8 on 'md' breakpoint
       width 6 on 'lg' breakpoint
       width 4 on 'xl' breakpoint
-    </div>
-  </div>
-</div>
 ```
 If you need apply offset to column use `offset-${breakpoint}-${value}` classnames like this:
 ```
-<div class="container">
-  <div class="row">
-    <div class="col col-4 offset-xs-4 offset-sm-5 offset-md-8 offset-lg-0">
+div(class="container")
+  div(class="row")
+    div(class="col col-4 offset-xs-4 offset-sm-5 offset-md-8 offset-lg-0")
       offset 4 columns on 'xs' breakpoint
       offset 5 columns on 'sm' breakpoint
       offset 8 columns on 'md' breakpoint
       don't do any offset on 'lg' breakpoint
-    </div>
-  </div>
-</div>
 ```
 If you need apply order to column use `order-${breakpoint}-${value}` classnames like this:
 ```
-<div class="container">
-  <div class="row">
-    <div class="col col-6 order-xs-1 order-md-5">
+div(class="container")
+  div(class="row")
+    div(class="col col-6 order-xs-1 order-md-5")
       order 1 on 'xs' breakpoint
       order 5 on 'md' breakpoint
-    </div>
-  </div>
-</div>
 ```
 
 ### Sass grid mixins
@@ -602,35 +573,37 @@ Each classname supports breakpoints. You can use template `${property}-${breakpo
 To apply small styles to text you can add `.small` classname or wrap element in `<small></small>` tag. Another way is to use `@small()` mixin:
 
 ```
-<div class="small">I am small text</div>
-<small>Me too!</small>
+div(class="small")
+  I am small text
+small
+  Me too!
 ```
 ```
-@include small() }
+@include small()
 ```
 
 Apply tagline styles to text in similar way:
 
 ```
-<div class="tagline">I am tagline text</div>
+div(class="tagline")
+  I am tagline text
 ```
 ```
-@include tagline() }
+@include tagline()
 ```
 
 Often you need to truncate some long text and put dots at the end of the line. Use one of these helpers to do that:
 ```
-<div class="text-truncate" style="width: 120px;">
+div(
+  class="text-truncate"
+  style="width: 120px;")
   I am very long text and I will be truncated at 120px width
-</div>
 
-<div class="text-truncate max-w-25">
+div(class="text-truncate max-w-25")
   I am very long text and I will be truncated at 25% width
-</div>
 
-<div class="text-dotted">
+div(class="text-dotted")
   I will not be truncated, but will have '…' at the end
-</div>
 ```
 ```
 .text-truncate {
@@ -950,9 +923,8 @@ Here are generated sizing classnames based on 50 size as an example:
 You can also apply `${breakpoints}` to dynamically change behavior on different screen sizes. For example, this `min-width` style will apply only below 768px (**sm** breakpoint):
 
 ```
-<div class="min-w-sm-50 min-w-75">
+div(class="min-w-sm-50 min-w-75")
   I have min-width 50% below 768px and 75% above
-</div>
 ```
 ```
 @media screen and (min-width: 768px) {
