@@ -5,7 +5,7 @@
 
 # Introduction 👋
 
-NightPack is a development framework based on [Webpack 4.x](https://webpack.js.org/). This is a child of [NightVue](https://github.com/nightrunner91/nightvue) project that has adopted its main principles. It is made for developers who don't need Vue.js functionality.
+NightPack is a development framework based on [Webpack 4.x](https://webpack.js.org/). This is a child of [NightVue](https://github.com/nightrunner91/nightvue) project that has inherited its main principles. It is made for developers who don't need Vue.js functionality.
 
 While many other frameworks offer ready-to-use UI solutions, NightPack gives you the maximum freedom to develop your own web interfaces. The ideological basis of the framework is the most useful utilities from [Bootstrap 4.x](https://getbootstrap.com/docs/4.6/getting-started/introduction/), many of which have been improved. NightPack uses best practices from [Material Design 2](https://material.io/) throughout. The framework is powered by [Webpack CLI 3.x](https://webpack.js.org/api/cli/), one of the most convenient tools for developing modern websites.
 
